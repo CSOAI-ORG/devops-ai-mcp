@@ -1,0 +1,24 @@
+{
+  "name": "devops-ai-mcp",
+  "description": "MEOK AI Labs \u2014 Infrastructure and DevOps toolkit for AI agents: Docker Compose generation,",
+  "vendor": "MEOK AI Labs",
+  "homepage": "https://meok.ai",
+  "repository": "https://github.com/CSOAI-ORG/devops-ai-mcp",
+  "runtime": "python",
+  "entrypoint": "server.py",
+  "tools": [
+    "docker_compose_generator",
+    "cicd_pipeline_builder",
+    "log_analyzer",
+    "incident_classifier",
+    "runbook_generator"
+  ],
+  "categories": [
+    "DevOps",
+    "Infrastructure"
+  ],
+  "pricing": {
+    "free": "50 calls/day",
+    "pro": "$9/mo"
+  }
+}

@@ -1,0 +1,10 @@
+name: devops-ai-mcp
+description: "MEOK AI Labs — Infrastructure and DevOps toolkit for AI agents: Docker Compose generation,"
+vendor: MEOK AI Labs
+homepage: https://meok.ai
+repository: https://github.com/CSOAI-ORG/devops-ai-mcp
+license: MIT
+categories: [DevOps, Infrastructure]
+tags: [devops, infrastructure, deployment, cloud-ops, system-administration]
+runtime: python
+entrypoint: server.py
