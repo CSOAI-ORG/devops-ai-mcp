@@ -11,6 +11,11 @@ Install: pip install mcp
 Run:     python server.py
 """
 
+
+import sys, os
+sys.path.insert(0, os.path.expanduser('~/clawd/meok-labs-engine/shared'))
+from auth_middleware import check_access
+
 import re
 from collections import Counter, defaultdict
 from datetime import datetime, timedelta
@@ -558,7 +563,7 @@ mcp = FastMCP(
 
 @mcp.tool()
 def docker_compose_generator(services: list[dict], network_name: str = "app-network",
-                             include_volumes: bool = True) -> dict:
+                             include_volumes: bool = True, api_key: str = "") -> dict:
     """Generate a Docker Compose configuration with networking, health checks,
     and volume management.
 
@@ -567,6 +572,10 @@ def docker_compose_generator(services: list[dict], network_name: str = "app-netw
         network_name: Docker network name
         include_volumes: Whether to create named volumes for services
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -580,7 +589,7 @@ def docker_compose_generator(services: list[dict], network_name: str = "app-netw
 def cicd_pipeline_builder(platform: str = "github_actions", language: str = "python",
                           stages: list[str] = ["lint", "test", "build", "deploy"],
                           deploy_target: str = "docker",
-                          branch: str = "main") -> dict:
+                          branch: str = "main", api_key: str = "") -> dict:
     """Generate a CI/CD pipeline configuration for common platforms and languages.
 
     Args:
@@ -590,6 +599,10 @@ def cicd_pipeline_builder(platform: str = "github_actions", language: str = "pyt
         deploy_target: Deployment target (aws, gcp, azure, kubernetes, docker)
         branch: Branch that triggers deployment
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -600,7 +613,7 @@ def cicd_pipeline_builder(platform: str = "github_actions", language: str = "pyt
 
 
 @mcp.tool()
-def log_analyzer(log_lines: list[str], time_window_minutes: int = 60) -> dict:
+def log_analyzer(log_lines: list[str], time_window_minutes: int = 60, api_key: str = "") -> dict:
     """Analyze log lines to extract error patterns, anomalies, status code
     distributions, and top IP addresses.
 
@@ -608,6 +621,10 @@ def log_analyzer(log_lines: list[str], time_window_minutes: int = 60) -> dict:
         log_lines: List of raw log lines to analyze
         time_window_minutes: Time window the logs cover (for rate calculations)
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -621,7 +638,7 @@ def log_analyzer(log_lines: list[str], time_window_minutes: int = 60) -> dict:
 def incident_classifier(title: str, description: str,
                         affected_services: list[str] = [],
                         error_count: int = 0,
-                        user_reports: int = 0) -> dict:
+                        user_reports: int = 0, api_key: str = "") -> dict:
     """Classify an incident by severity (P1-P4) and category with recommended
     response actions and escalation paths.
 
@@ -632,6 +649,10 @@ def incident_classifier(title: str, description: str,
         error_count: Number of errors observed
         user_reports: Number of user-reported issues
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -644,7 +665,7 @@ def incident_classifier(title: str, description: str,
 @mcp.tool()
 def runbook_generator(service_name: str, incident_type: str = "service_down",
                       tech_stack: list[str] = [],
-                      alert_threshold: str = "90%") -> dict:
+                      alert_threshold: str = "90%", api_key: str = "") -> dict:
     """Generate an operational runbook with step-by-step commands, expected
     outcomes, and escalation policies.
 
@@ -654,6 +675,10 @@ def runbook_generator(service_name: str, incident_type: str = "service_down",
         tech_stack: Technologies used (e.g. ["python", "postgres", "redis"])
         alert_threshold: Alert threshold that triggered the runbook
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     err = _check_rate_limit()
     if err:
         return {"error": err}

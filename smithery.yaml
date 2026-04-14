@@ -1,10 +1,76 @@
 name: devops-ai-mcp
-description: "MEOK AI Labs — Infrastructure and DevOps toolkit for AI agents: Docker Compose generation,"
-vendor: MEOK AI Labs
-homepage: https://meok.ai
-repository: https://github.com/CSOAI-ORG/devops-ai-mcp
-license: MIT
-categories: [DevOps, Infrastructure]
-tags: [devops, infrastructure, deployment, cloud-ops, system-administration]
-runtime: python
-entrypoint: server.py
+description: '**By MEOK AI Labs** | [meok.ai](https://meok.ai)'
+version: 1.0.0
+tools:
+- name: docker_compose_generator
+  description: Generate a Docker Compose configuration with networking, health checks,
+  parameters:
+  - name: services
+    type: array
+    required: true
+  - name: network_name
+    type: string
+    required: false
+  - name: include_volumes
+    type: boolean
+    required: false
+- name: cicd_pipeline_builder
+  description: Generate a CI/CD pipeline configuration for common platforms and languages.
+  parameters:
+  - name: platform
+    type: string
+    required: false
+  - name: language
+    type: string
+    required: false
+  - name: stages
+    type: array
+    required: false
+  - name: deploy_target
+    type: string
+    required: false
+  - name: branch
+    type: string
+    required: false
+- name: log_analyzer
+  description: Analyze log lines to extract error patterns, anomalies, status code
+  parameters:
+  - name: log_lines
+    type: array
+    required: true
+  - name: time_window_minutes
+    type: integer
+    required: false
+- name: incident_classifier
+  description: Classify an incident by severity (P1-P4) and category with recommended
+  parameters:
+  - name: title
+    type: string
+    required: true
+  - name: description
+    type: string
+    required: true
+  - name: affected_services
+    type: array
+    required: false
+  - name: error_count
+    type: integer
+    required: false
+  - name: user_reports
+    type: integer
+    required: false
+- name: runbook_generator
+  description: Generate an operational runbook with step-by-step commands, expected
+  parameters:
+  - name: service_name
+    type: string
+    required: true
+  - name: incident_type
+    type: string
+    required: false
+  - name: tech_stack
+    type: array
+    required: false
+  - name: alert_threshold
+    type: string
+    required: false

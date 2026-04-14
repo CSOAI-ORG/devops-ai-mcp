@@ -1,24 +1,138 @@
 {
   "name": "devops-ai-mcp",
-  "description": "MEOK AI Labs \u2014 Infrastructure and DevOps toolkit for AI agents: Docker Compose generation,",
-  "vendor": "MEOK AI Labs",
-  "homepage": "https://meok.ai",
-  "repository": "https://github.com/CSOAI-ORG/devops-ai-mcp",
-  "runtime": "python",
-  "entrypoint": "server.py",
+  "description": "**By MEOK AI Labs** | [meok.ai](https://meok.ai)",
+  "version": "1.0.0",
   "tools": [
-    "docker_compose_generator",
-    "cicd_pipeline_builder",
-    "log_analyzer",
-    "incident_classifier",
-    "runbook_generator"
-  ],
-  "categories": [
-    "DevOps",
-    "Infrastructure"
-  ],
-  "pricing": {
-    "free": "50 calls/day",
-    "pro": "$9/mo"
-  }
+    {
+      "name": "docker_compose_generator",
+      "description": "Generate a Docker Compose configuration with networking, health checks,",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "services": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "network_name": {
+            "type": "string"
+          },
+          "include_volumes": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "services"
+        ]
+      }
+    },
+    {
+      "name": "cicd_pipeline_builder",
+      "description": "Generate a CI/CD pipeline configuration for common platforms and languages.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "platform": {
+            "type": "string"
+          },
+          "language": {
+            "type": "string"
+          },
+          "stages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "deploy_target": {
+            "type": "string"
+          },
+          "branch": {
+            "type": "string"
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "log_analyzer",
+      "description": "Analyze log lines to extract error patterns, anomalies, status code",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "log_lines": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "time_window_minutes": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "log_lines"
+        ]
+      }
+    },
+    {
+      "name": "incident_classifier",
+      "description": "Classify an incident by severity (P1-P4) and category with recommended",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "affected_services": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "error_count": {
+            "type": "integer"
+          },
+          "user_reports": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "title",
+          "description"
+        ]
+      }
+    },
+    {
+      "name": "runbook_generator",
+      "description": "Generate an operational runbook with step-by-step commands, expected",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "service_name": {
+            "type": "string"
+          },
+          "incident_type": {
+            "type": "string"
+          },
+          "tech_stack": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alert_threshold": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "service_name"
+        ]
+      }
+    }
+  ]
 }
