@@ -553,8 +553,7 @@ def _runbook_generator(service_name: str, incident_type: str,
 # ---------------------------------------------------------------------------
 mcp = FastMCP(
     "DevOps AI MCP",
-    instructions="Infrastructure and DevOps toolkit: Docker Compose generation, CI/CD pipeline building, log analysis, incident classification, and runbook generation. By MEOK AI Labs.",
-)
+    instructions="Infrastructure and DevOps toolkit: Docker Compose generation, CI/CD pipeline building, log analysis, incident classification, and runbook generation. By MEOK AI Labs.")
 
 
 @mcp.tool()
