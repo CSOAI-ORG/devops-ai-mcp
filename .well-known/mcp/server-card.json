@@ -1,0 +1,58 @@
+{
+  "name": "DevOps AI MCP",
+  "description": "Infrastructure and DevOps toolkit: Docker Compose generation, CI/CD pipeline building, log analysis, incident classification, and runbook generation. By MEOK AI Labs.",
+  "version": "1.0.0",
+  "protocol_version": "2025-11-25",
+  "publisher": {
+    "name": "MEOK AI Labs",
+    "url": "https://meok.ai",
+    "email": "nicholas@meok.ai"
+  },
+  "repository": "https://github.com/CSOAI-ORG/devops-ai-mcp",
+  "license": "MIT",
+  "transport": [
+    "stdio",
+    "streamable-http"
+  ],
+  "authentication": {
+    "type": "api-key",
+    "free_tier": true,
+    "free_limit": "15 calls/day"
+  },
+  "tools": [
+    {
+      "name": "docker_compose_generator",
+      "description": "Generate a Docker Compose configuration with networking, health checks,"
+    },
+    {
+      "name": "cicd_pipeline_builder",
+      "description": "Generate a CI/CD pipeline configuration for common platforms and languages."
+    },
+    {
+      "name": "log_analyzer",
+      "description": "Analyze log lines to extract error patterns, anomalies, status code"
+    },
+    {
+      "name": "incident_classifier",
+      "description": "Classify an incident by severity (P1-P4) and category with recommended"
+    },
+    {
+      "name": "runbook_generator",
+      "description": "Generate an operational runbook with step-by-step commands, expected"
+    }
+  ],
+  "categories": [
+    "AI & Machine Learning",
+    "Data & Analytics",
+    "DevOps & Infrastructure"
+  ],
+  "pricing": {
+    "free": {
+      "calls_per_day": 15
+    },
+    "pro": {
+      "price": "$29/month",
+      "url": "https://meok.ai/pricing"
+    }
+  }
+}
