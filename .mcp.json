@@ -1,6 +1,6 @@
 {
   "name": "devops-ai-mcp",
-  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 Infrastructure and DevOps toolkit: Docker Compose generation, CI/CD pipeline building, log analysis,",
+  "description": "Devops Ai automation via MCP. Includes docker compose generator, cicd pipeline builder, log analyzer. By MEOK AI Labs.",
   "version": "1.0.0",
   "tools": [
     {

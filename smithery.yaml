@@ -1,6 +1,6 @@
 name: devops-ai-mcp
-description: 'Infrastructure and DevOps toolkit: Docker Compose generation, CI/CD
-  pipeline building, log analysis,'
+description: Devops Ai automation via MCP. Includes docker compose generator, cicd
+  pipeline builder, log analyzer. By MEOK AI Labs.
 version: 1.0.0
 tools:
 - name: docker_compose_generator
