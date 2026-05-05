@@ -1,53 +1,38 @@
-# DevOps AI MCP Server
-**By MEOK AI Labs** | [meok.ai](https://meok.ai)
+<div align="center">
 
-Infrastructure and DevOps toolkit: Docker Compose generation, CI/CD pipeline building, log analysis, incident classification, and runbook generation.
+[![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/devops-ai-mcp)](https://github.com/CSOAI-ORG/devops-ai-mcp/stargazers)
 
-## Tools
+# udevopsU aiU mcp
 
-| Tool | Description |
-|------|-------------|
-| `docker_compose_generator` | Generate Docker Compose configs with networking and health checks |
-| `cicd_pipeline_builder` | Generate CI/CD pipelines for GitHub Actions, GitLab CI, etc. |
-| `log_analyzer` | Analyze log lines for error patterns, anomalies, and status codes |
-| `incident_classifier` | Classify incidents by severity (P1-P4) with escalation paths |
-| `runbook_generator` | Generate operational runbooks with step-by-step commands |
+****By MEOK AI Labs** | [meok.ai](https://meok.ai)**
+
+[![npm version](https://img.shields.io/npm/v/@meok-ai/devops-ai-mcp)](https://www.npmjs.com/package/@meok-ai/devops-ai-mcp)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-255+_servers-purple)](https://meok.ai)
+
+[Installation](#installation) · [Docs](https://csoai.org) · [Report Bug](https://github.com/CSOAI-ORG/devops-ai-mcp/issues)
+
+</div>
+
+---
 
 ## Installation
 
 ```bash
-pip install mcp
+pip install devops-ai-mcp
+# or
+npm install -g @meok-ai/devops-ai-mcp
 ```
 
-## Usage
+## Quick Start
 
-### Run the server
+See the project repository for full documentation and examples.
 
-```bash
-python server.py
-```
+## Enterprise Support
 
-### Claude Desktop config
-
-```json
-{
-  "mcpServers": {
-    "devops": {
-      "command": "python",
-      "args": ["/path/to/devops-ai-mcp/server.py"]
-    }
-  }
-}
-```
-
-## Pricing
-
-| Tier | Limit | Price |
-|------|-------|-------|
-| Free | 30 calls/day | $0 |
-| Pro | Unlimited + premium features | $9/mo |
-| Enterprise | Custom + SLA + support | Contact us |
+- 📧 nicholas@csoai.org
+- 🌐 [CSOAI.org](https://csoai.org)
 
 ## License
 
-MIT
+MIT © [CSOAI](https://csoai.org)
