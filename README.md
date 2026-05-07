@@ -1,3 +1,5 @@
+[![devops-ai-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/devops-ai-mcp/badges/card.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/devops-ai-mcp)
+
 <div align="center">
 
 [![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/devops-ai-mcp)](https://github.com/CSOAI-ORG/devops-ai-mcp/stargazers)
