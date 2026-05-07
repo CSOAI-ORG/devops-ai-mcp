@@ -571,6 +571,20 @@ def docker_compose_generator(services: list[dict], network_name: str = "app-netw
         services: List of services as [{"name": "api", "image": "node:20", "ports": ["3000:3000"], "environment": {"NODE_ENV": "production"}, "depends_on": ["db"], "health_check": "curl -f http://localhost:3000/health"}]
         network_name: Docker network name
         include_volumes: Whether to create named volumes for services
+
+    Behavior:
+        This tool generates structured output without modifying external systems.
+        Output is deterministic for identical inputs. No side effects.
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -598,6 +612,20 @@ def cicd_pipeline_builder(platform: str = "github_actions", language: str = "pyt
         stages: Pipeline stages to include (lint, test, build, deploy)
         deploy_target: Deployment target (aws, gcp, azure, kubernetes, docker)
         branch: Branch that triggers deployment
+
+    Behavior:
+        This tool generates structured output without modifying external systems.
+        Output is deterministic for identical inputs. No side effects.
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -620,6 +648,21 @@ def log_analyzer(log_lines: list[str], time_window_minutes: int = 60, api_key: s
     Args:
         log_lines: List of raw log lines to analyze
         time_window_minutes: Time window the logs cover (for rate calculations)
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -648,6 +691,21 @@ def incident_classifier(title: str, description: str,
         affected_services: List of affected service names
         error_count: Number of errors observed
         user_reports: Number of user-reported issues
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -674,6 +732,20 @@ def runbook_generator(service_name: str, incident_type: str = "service_down",
         incident_type: Type of incident (high_cpu, high_memory, service_down, high_latency, disk_full)
         tech_stack: Technologies used (e.g. ["python", "postgres", "redis"])
         alert_threshold: Alert threshold that triggered the runbook
+
+    Behavior:
+        This tool generates structured output without modifying external systems.
+        Output is deterministic for identical inputs. No side effects.
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
