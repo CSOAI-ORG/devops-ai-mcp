@@ -13,7 +13,6 @@ Run:     python server.py
 
 
 import sys, os
-sys.path.insert(0, os.path.expanduser('~/clawd/meok-labs-engine/shared'))
 from auth_middleware import check_access
 
 import re
@@ -21,6 +20,15 @@ from collections import Counter, defaultdict
 from datetime import datetime, timedelta
 from typing import Any, Optional
 from mcp.server.fastmcp import FastMCP
+
+STRIPE_199 = "https://buy.stripe.com/00wfZjcgAeUW4c5cyQ8k90K"
+
+def _add_upgrade_tail(response, tier="free"):
+    """Append upgrade nudge to free-tier success responses."""
+    if isinstance(response, dict) and tier == "free":
+        response["_upgrade_note"] = "Pro tier: unlimited calls + priority support. Upgrade: " + STRIPE_199
+    return response
+
 
 # ---------------------------------------------------------------------------
 # Rate limiting
@@ -588,7 +596,7 @@ def docker_compose_generator(services: list[dict], network_name: str = "app-netw
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": STRIPE_199}
 
     err = _check_rate_limit()
     if err:
@@ -643,7 +651,7 @@ def cicd_pipeline_builder(platform: str = "github_actions", language: str = "pyt
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": STRIPE_199}
 
     err = _check_rate_limit()
     if err:
@@ -694,7 +702,7 @@ def log_analyzer(log_lines: list[str], time_window_minutes: int = 60, api_key: s
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": STRIPE_199}
 
     err = _check_rate_limit()
     if err:
@@ -751,7 +759,7 @@ def incident_classifier(title: str, description: str,
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": STRIPE_199}
 
     err = _check_rate_limit()
     if err:
@@ -791,7 +799,7 @@ def runbook_generator(service_name: str, incident_type: str = "service_down",
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": STRIPE_199}
 
     err = _check_rate_limit()
     if err:
@@ -802,5 +810,8 @@ def runbook_generator(service_name: str, incident_type: str = "service_down",
         return {"error": str(e)}
 
 
-if __name__ == "__main__":
+def main():
     mcp.run()
+
+if __name__ == '__main__':
+    main()
