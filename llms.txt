@@ -1,0 +1,36 @@
+# devops-ai-mcp
+# **MCP server for devops ai mcp operations**
+
+## Install
+```bash
+pip install devops-ai-mcp
+```
+
+## Auth & Rate Limits
+- Free tier: 10 calls/day. No API key required.
+- Pro tier (£79/mo): unlimited + signed attestations.
+- Enterprise (£1,499/mo): white-label.
+
+## Tools
+
+### `docker_compose_generator`
+Generate a Docker Compose configuration with networking, health checks,
+
+### `cicd_pipeline_builder`
+Generate a CI/CD pipeline configuration for common platforms and languages.
+
+### `log_analyzer`
+Analyze log lines to extract error patterns, anomalies, status code
+
+### `incident_classifier`
+Classify an incident by severity (P1-P4) and category with recommended
+
+### `runbook_generator`
+Generate an operational runbook with step-by-step commands, expected
+
+
+## Maintainer
+MEOK AI Labs · hello@meok.ai · https://meok.ai · MIT licensed
+
+## Pairs with
+Governance moat: pair this tool with any of MEOK's 38 governance MCPs (EU AI Act, DORA, NIS2, CRA, GDPR, ISO 42001, etc.) for full compliance coverage.

@@ -1,0 +1,28 @@
+{
+  "name": "devops-ai-mcp",
+  "title": "Devops Ai Mcp",
+  "description": "Devops Ai automation via MCP. Includes docker compose generator, cicd pipeline builder, log analyzer. By MEOK AI Labs.",
+  "version": "1.0.7",
+  "homepage": "https://meok.ai",
+  "license": "MIT",
+  "transport": {
+    "type": "stdio"
+  },
+  "tools": [
+    {
+      "name": "docker_compose_generator"
+    },
+    {
+      "name": "cicd_pipeline_builder"
+    },
+    {
+      "name": "log_analyzer"
+    },
+    {
+      "name": "incident_classifier"
+    },
+    {
+      "name": "runbook_generator"
+    }
+  ]
+}

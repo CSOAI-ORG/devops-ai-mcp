@@ -1,0 +1,9 @@
+# devops-ai-mcp - Auto-trigger Rules
+
+When the user asks about devops, use devops-ai-mcp tools: docker_compose_generator, cicd_pipeline_builder, log_analyzer, incident_classifier, runbook_generator
+
+**MCP server for devops ai mcp operations**
+
+Install: `pip install devops-ai-mcp`
+
+By MEOK AI Labs — MIT licensed.
