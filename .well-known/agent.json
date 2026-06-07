@@ -1,0 +1,68 @@
+{
+  "name": "devops-ai-mcp",
+  "description": "Devops Ai MCP Server by MEOK AI Labs",
+  "url": "https://proofof.ai/scorecard/devops-ai-mcp.html",
+  "version": "1.0.7",
+  "protocolVersion": "0.2.0",
+  "provider": {
+    "organization": "MEOK AI Labs",
+    "url": "https://meok.ai"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": [
+    "text"
+  ],
+  "defaultOutputModes": [
+    "text"
+  ],
+  "skills": [
+    {
+      "id": "docker_compose_generator",
+      "name": "Docker Compose Generator",
+      "description": "docker_compose_generator via devops-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "cicd_pipeline_builder",
+      "name": "Cicd Pipeline Builder",
+      "description": "cicd_pipeline_builder via devops-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "log_analyzer",
+      "name": "Log Analyzer",
+      "description": "log_analyzer via devops-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "incident_classifier",
+      "name": "Incident Classifier",
+      "description": "incident_classifier via devops-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "runbook_generator",
+      "name": "Runbook Generator",
+      "description": "runbook_generator via devops-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    }
+  ]
+}

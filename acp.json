@@ -1,0 +1,23 @@
+{
+  "acpVersion": "0.1",
+  "agent": {
+    "name": "devops-ai-mcp",
+    "description": "Devops Ai MCP Server by MEOK AI Labs",
+    "version": "1.0.7",
+    "provider": "MEOK AI Labs",
+    "interfaces": [
+      {
+        "type": "mcp",
+        "transport": "stdio",
+        "package": "devops-ai-mcp"
+      }
+    ],
+    "capabilities": [
+      "docker_compose_generator",
+      "cicd_pipeline_builder",
+      "log_analyzer",
+      "incident_classifier",
+      "runbook_generator"
+    ]
+  }
+}
